@@ -14,6 +14,12 @@ python -m http.server 8000
 
 然后访问 `http://127.0.0.1:8000/`。
 
+## 在线地址
+
+<https://levs2310.github.io/YS-Lite-arm/>
+
+仓库 `main` 分支根目录就是站点根目录，推送到 GitHub 后 Pages 自动重新发布（通常 1 分钟内生效）。目录内的 `.nojekyll` 让 Pages 跳过 Jekyll 处理，静态文件按原样发布。
+
 ## 结构
 
 ```text
@@ -24,7 +30,7 @@ styles.css              全站视觉与响应式
 script.js               导航、滚动态、入场动效、联系方式弹窗
 favicon.svg             站点图标
 og-cover.jpg            社交分享封面
-images/products/        Lite/L1/L2 实物白底产品图（*-photo.jpg；另存旧版图与 WebP）
+images/products/        Lite/L1/L2 实物白底产品图（*‑photo.jpg，仅保留页面引用的三张）
 ```
 
 ## 需要后续补充
@@ -35,8 +41,8 @@ images/products/        Lite/L1/L2 实物白底产品图（*-photo.jpg；另存�
 2. **产品参数**  
    三个产品的 `.product-facts` 统一为 价格 / 结构 / 驱动 / 交付 四行；其中 Lite 的「结构」暂为 `—`，待提供准确材质后替换 `dd`。
 
-3. **社交分享图地址**  
-   `index.html` 里 `og:image` 目前是相对路径，部署后建议换成完整的 `https://` 地址。
+3. ~~**社交分享图地址**~~（已完成）  
+   `index.html` 的 `og:image` / `og:url` 已换成 `https://levs2310.github.io/YS-Lite-arm/` 的绝对地址。若仓库改名或换域名，这两行要同步改。
 
 4. **接入 WebP**  
    `images/products/` 里另有旧的 `*-800.webp` / `*-1600.webp`，页面当前引用 `*-photo.jpg`（1600²，合计约 440 KB）。若要进一步瘦身，可对 `*-photo.jpg` 重新导出 WebP 并改用 `<picture>` + `srcset`。
