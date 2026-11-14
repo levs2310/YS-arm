@@ -445,8 +445,8 @@ ul {
 .hero-products {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(18px, 2.6vw, 32px);
-  max-width: 1080px;
+  gap: clamp(18px, 2.6vw, 30px);
+  max-width: 1160px;
   margin: 58px auto 0;
 }
 
@@ -562,6 +562,10 @@ ul {
 
 .products {
   padding: clamp(24px, 3vw, 40px) 0 24px;
+}
+
+.products-eyebrow {
+  margin-bottom: clamp(10px, 1.4vw, 18px);
 }
 
 .product {
@@ -705,18 +709,18 @@ ul {
 
 .compare-table {
   width: 100%;
-  min-width: 900px;
+  min-width: 720px;
   border-collapse: collapse;
   table-layout: fixed;
   text-align: left;
 }
 
 .compare-table .ct-col-feature {
-  width: 20%;
+  width: 28%;
 }
 
 .compare-table .ct-col-data {
-  width: 16%;
+  width: 24%;
 }
 
 .compare-table th,
@@ -789,7 +793,7 @@ ul {
   display: block;
   margin-top: 4px;
   color: var(--accent-dark);
-  font-size: 13px;
+  font-size: 15px;
   font-variant-numeric: tabular-nums;
 }
 
@@ -806,6 +810,61 @@ ul {
   color: var(--accent);
   font-size: 18px;
   line-height: 1;
+}
+
+/* ---------- parts / kits ---------- */
+
+.parts {
+  margin-top: clamp(48px, 6vw, 80px);
+  border-top: 1px solid var(--line);
+  padding-top: clamp(40px, 5vw, 64px);
+}
+
+.parts-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+/* 首列与上方对比表的功能列同宽（28%），其余三列各 24%，两块表的竖线因此对齐 */
+.parts-table thead th:first-child {
+  width: 28%;
+}
+
+.parts-table .pt-empty {
+  padding: 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.parts-table th,
+.parts-table td {
+  padding: 18px 16px;
+  border-bottom: 1px solid var(--line);
+  text-align: center;
+  vertical-align: middle;
+}
+
+.parts-table thead th {
+  border-top: 1px solid var(--line);
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.parts-table tbody td {
+  color: var(--accent-dark);
+  font-family: var(--serif);
+  font-size: 22px;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: .01em;
+}
+
+/* 配件表之后直接接交付区：不再叠一条分隔线，避免出现一条悬空空行 */
+.parts + .delivery {
+  margin-top: clamp(32px, 4vw, 48px);
+  border-top: 0;
+  padding-top: clamp(24px, 3vw, 32px);
 }
 
 /* ---------- delivery ---------- */
@@ -1356,6 +1415,28 @@ a.cd-value:hover {
   .product-facts div {
     grid-template-columns: 76px minmax(0, 1fr);
     gap: 12px;
+  }
+
+  .parts-table th,
+  .parts-table td {
+    padding: 14px 8px;
+  }
+
+  .parts-table {
+    table-layout: fixed;
+  }
+
+  .parts-table thead th:first-child,
+  .parts-table tbody td:first-child {
+    display: none;
+  }
+
+  .parts-table thead th {
+    font-size: 13px;
+  }
+
+  .parts-table tbody td {
+    font-size: 19px;
   }
 
   .contact-dialog {
