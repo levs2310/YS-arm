@@ -1017,6 +1017,80 @@ ul {
   outline-offset: 3px;
 }
 
+/* ---------- 开源页操作入口 ---------- */
+
+.os-actions {
+  display: grid;
+  gap: 10px;
+  min-width: 0;
+}
+
+.os-action {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: clamp(14px, 1.8vw, 24px);
+  padding: clamp(16px, 1.7vw, 21px) clamp(16px, 1.8vw, 24px);
+  border: 1px solid var(--line);
+  transition: border-color .22s ease, background .22s ease;
+}
+
+.os-action:hover {
+  border-color: var(--accent);
+  background: #f7fbfe;
+}
+
+.os-action:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.os-action-num {
+  color: var(--accent);
+  font-family: var(--sans);
+  font-size: 12px;
+  letter-spacing: .08em;
+  font-variant-numeric: tabular-nums;
+}
+
+.os-action-body {
+  display: block;
+  min-width: 0;
+}
+
+.os-action-body strong {
+  display: block;
+  font-family: var(--serif);
+  font-size: clamp(18px, 1.6vw, 21px);
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: .01em;
+}
+
+.os-action-body em {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+  font-style: normal;
+  font-size: 12px;
+  line-height: 1.6;
+  letter-spacing: .02em;
+}
+
+.os-action-arrow {
+  color: var(--accent);
+  font-size: 15px;
+  transition: transform .22s var(--ease);
+}
+
+.os-action:hover .os-action-arrow {
+  transform: translate(3px, -3px);
+}
+
+.os-action--down:hover .os-action-arrow {
+  transform: translateY(3px);
+}
+
 /* ---------- subpage ---------- */
 
 .subpage-main .products {
@@ -1398,16 +1472,37 @@ a.cd-value:hover {
 
   .compare-table th,
   .compare-table td {
-    padding: 13px 12px;
-    font-size: 12px;
+    padding: 10px 6px;
+    font-size: 11.5px;
   }
 
   .compare-table tbody th[scope="row"] {
-    font-size: 12px;
+    font-size: 11.5px;
+  }
+
+  /* 窄屏不再横向滚动：压缩列宽与字号，让整张对比表一屏看全 */
+  .compare-scroll {
+    overflow-x: visible;
+  }
+
+  .compare-table {
+    min-width: 0;
+  }
+
+  .compare-table .ct-col-feature {
+    width: 32%;
+  }
+
+  .compare-table .ct-col-data {
+    width: 22.67%;
   }
 
   .ct-name {
-    font-size: 17px;
+    font-size: 14px;
+  }
+
+  .ct-price {
+    font-size: 12.5px;
   }
 }
 
