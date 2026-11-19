@@ -682,6 +682,30 @@ ul {
   line-height: 1.8;
 }
 
+/* 产品卡里的外链按钮（如 L2 组装教程） */
+.product-link {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 20px;
+  padding: 9px 18px;
+  border: 1px solid var(--line);
+  color: var(--accent);
+  font-size: 13px;
+  letter-spacing: .04em;
+  transition: border-color .22s ease, background .22s ease, color .22s ease;
+}
+
+.product-link:hover {
+  border-color: var(--accent);
+  background: #f7fbfe;
+  color: var(--accent-dark);
+}
+
+.product-link:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
 /* ---------- compare ---------- */
 
 .sr-only {
